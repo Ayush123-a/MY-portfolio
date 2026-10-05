@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayush Singh Rawat — Interactive 3D Resume</title>
+  <meta name="description" content="The professional journey of Ayush Singh Rawat, presented as an interactive 3D book-style resume.">
+  <meta name="author" content="Ayush Singh Rawat">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ayush Singh Rawat — Interactive Resume">
+  <meta property="og:description" content="Turn the pages of my career journey in an interactive 3D book.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/book-resume.css">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body data-book-theme="vintage">
+
+  <div class="book-resume-wrapper">
+    <!-- Top Action Toolbar -->
+    <header class="book-top-bar">
+      <a href="index.html" class="book-brand-back">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Back to Portfolio</span>
+      </a>
+
+      <div class="book-tools-group">
+        <button id="themeToggleBtn" class="book-tool-btn" title="Switch Book Theme">
+          <i class="fa-solid fa-book"></i>
+          <span>Vintage</span>
+        </button>
+
+        <button id="soundToggleBtn" class="book-tool-btn" title="Toggle Page Flip Sound">
+          <i class="fa-solid fa-volume-high"></i>
+          <span>Sound On</span>
+        </button>
+
+        <button id="printAtsBtn" class="book-tool-btn" title="Print ATS-Formatted Standard Resume">
+          <i class="fa-solid fa-print"></i>
+          <span>Print / ATS PDF</span>
+        </button>
+
+        <button id="downloadPdfBtn" class="book-tool-btn" title="Download Official Resume PDF">
+          <i class="fa-solid fa-file-arrow-down"></i>
+          <span>Download CV</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- 3D Book Stage -->
+    <main class="book-stage">
+      <div class="book-glow-backdrop"></div>
+
+      <!-- Hardcover Outer Shell -->
+      <div class="book-hardcover">
+        <!-- Desktop 2-Page Spread View -->
+        <div class="book-spread" id="desktopBookSpread">
+          <!-- Left Page Half -->
+          <div class="book-page-half left-page parchment-texture" id="bookLeftPage">
+            <!-- Dynamically populated by book-resume.js -->
+          </div>
+
+          <!-- Central 3D Leather Spine -->
+          <div class="book-spine-divider"></div>
+
+          <!-- Right Page Half -->
+          <div class="book-page-half right-page parchment-texture" id="bookRightPage">
+            <!-- Dynamically populated by book-resume.js -->
+          </div>
+        </div>
+
+        <!-- Mobile Single Page View -->
+        <div class="book-spread mobile-view" id="mobileBookSpread" style="display: none;">
+          <div class="book-page-half parchment-texture active-mobile-page" id="bookMobilePage">
+            <!-- Dynamically populated on mobile -->
+          </div>
+        </div>
+
+        <!-- Layered Paper Edges -->
+        <div class="book-edge-bottom-1"></div>
+        <div class="book-edge-bottom-2"></div>
+      </div>
+    </main>
+
+    <!-- Navigation Controls -->
+    <footer class="book-bottom-nav">
+      <div class="book-nav-row">
+        <button id="prevPageBtn" class="book-turn-btn" title="Previous Page (or Left Arrow)">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="book-dots" id="bookDots">
+          <!-- Populated by JS -->
+        </div>
+
+        <button id="nextPageBtn" class="book-turn-btn" title="Next Page (or Right Arrow)">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <p class="book-hint-text">
+        Use keyboard arrows (← / →) or click to turn pages · Touch swipe enabled on mobile
+      </p>
+
+      <div class="book-actions-footer">
+        <a href="assets/Ayush_Singh_Rawat_Resume.pdf" download="Ayush_Singh_Rawat_Resume.pdf" class="btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">
+          <i class="fa-solid fa-download"></i> Download Original PDF
+        </a>
+        <a href="index.html#contact" class="btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
+          <i class="fa-solid fa-envelope"></i> Contact Ayush
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ATS Clean Printable Resume (Only renders when user clicks Print / ATS PDF or Ctrl+P) -->
+  <div class="ats-print-container">
+    <div class="ats-header">
+      <h1>AYUSH SINGH RAWAT</h1>
+      <div class="ats-contact-line">
+        Bangalore, Karnataka | +91 8088954420 | ayushsinghrawat76456@gmail.com
+      </div>
+      <div class="ats-contact-line">
+        LinkedIn: linkedin.com/in/ayush-rawat-a126942b2 | GitHub: github.com/Ayush123-a
+      </div>
+    </div>
+
+    <div class="ats-section-title">Professional Summary</div>
+    <p style="margin: 0 0 10px 0; font-size: 10pt; line-height: 1.4;">
+      Highly motivated and results-driven BCA student (Expected 2027) specializing in Full-Stack Web Development. Proficient in building dynamic, high-performance, and responsive user interfaces (UI) using React.js (Hooks, State Management) and modern JavaScript (ES6+). Strong foundation in Database Management (MySQL, MongoDB), computer science fundamentals (DSA, DBMS), and Agile development methodologies. Passionate about applying cutting-edge technology, including Generative AI, to real-world applications.
+    </p>
+
+    <div class="ats-section-title">Technical Skills</div>
+    <ul class="ats-bullet-list" style="margin-bottom: 10px;">
+      <li><strong>Languages:</strong> JavaScript (ES6+), HTML5, CSS3, SQL, Python, C, C++, Java.</li>
+      <li><strong>Frameworks & Libraries:</strong> React.js (Hooks, Components, Context), Bootstrap, Tailwind CSS.</li>
+      <li><strong>Databases:</strong> MySQL, MongoDB.</li>
+      <li><strong>Tools & Concepts:</strong> Git/GitHub, RESTful APIs, DOM Manipulation, Responsive Design, SDLC (Agile/Scrum, Waterfall).</li>
+    </ul>
+
+    <div class="ats-section-title">Development Projects</div>
+    
+    <div style="margin-bottom: 8px;">
+      <div class="ats-item-header">
+        <span>Treasure Hunt Game</span>
+        <span>HTML, CSS, JavaScript | GitHub Pages</span>
+      </div>
+      <ul class="ats-bullet-list">
+        <li>Developed a fully interactive, browser-based game using vanilla HTML, CSS, and JavaScript, successfully implementing complex scoring, randomization, and timer logic.</li>
+        <li>Demonstrated core JavaScript proficiency by managing game state, controlling UI flow, and ensuring an engaging, bug-free interactive gameplay experience.</li>
+        <li>Deployed and maintained the application on GitHub Pages, ensuring high availability and browser compatibility.</li>
+      </ul>
+    </div>
+
+    <div style="margin-bottom: 8px;">
+      <div class="ats-item-header">
+        <span>Dynamic Quiz Application</span>
+        <span>JavaScript, Advanced DOM Manipulation</span>
+      </div>
+      <ul class="ats-bullet-list">
+        <li>Engineered a robust, dynamic quiz platform that utilizes advanced DOM Manipulation to handle question rendering, real-time score calculation, and visual feedback for timed questions.</li>
+        <li>Managed all application logic within JavaScript to create a reusable and scalable system for handling multiple question sets.</li>
+        <li>Showcased expertise in efficient client-side data handling and UI updates for a smooth user experience.</li>
+      </ul>
+    </div>
+
+    <div style="margin-bottom: 8px;">
+      <div class="ats-item-header">
+        <span>Social Media Community Application</span>
+        <span>React.js, REST APIs</span>
+      </div>
+      <ul class="ats-bullet-list">
+        <li>Developed a community platform connecting creators and developers globally with live feeds, profile showcases, and interactive posts.</li>
+        <li>Implemented responsive components with fast render cycles and modern UI aesthetics.</li>
+      </ul>
+    </div>
+
+    <div class="ats-section-title">Education</div>
+    <div>
+      <div class="ats-item-header">
+        <span>Bachelor of Computer Applications (BCA)</span>
+        <span>Expected Graduation: 2027</span>
+      </div>
+      <div class="ats-sub-header">
+        <span>City College, Bangalore University</span>
+        <span>Bangalore, Karnataka</span>
+      </div>
+      <p style="margin: 0; font-size: 9.5pt;">
+        <strong>Relevant Coursework:</strong> Data Structures & Algorithms (DSA), Database Management Systems (DBMS), Operating Systems, Computer Networks, Software Development Life Cycle (SDLC) / Agile.
+      </p>
+    </div>
+
+    <div class="ats-section-title" style="margin-top: 10px;">Certifications & Training</div>
+    <ul class="ats-bullet-list">
+      <li>Generative AI Fundamentals</li>
+      <li>Agile Methodology and Waterfall Model</li>
+      <li>React.js Basics and Advanced Hooks Training (Self-Paced Learning)</li>
+    </ul>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/book-resume.js"></script>
+</body>
+</html>
