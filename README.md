@@ -10,19 +10,29 @@ A modern, high-performance developer portfolio and interactive 3D book-style res
 - **Hero Section**: Dynamic typewriter animation, live availability status badge, glowing ambient mesh backdrop, floating interactive tech chips (React.js, JavaScript ES6+, BCA 2027), and direct call-to-action buttons.
 - **Key Metrics Strip**: 5+ projects deployed, 3+ certifications, 1000+ lines of vanilla JS, and 100% commitment.
 - **Interactive About Me**:
-  - **Technical Skills**: Animated proficiency bars (JavaScript 90%, React 85%, HTML/CSS 92%, SQL 80%, Git 88%) and technology tags.
+  - **Technical Skills**: Animated proficiency bars (JavaScript 80%, HTML/CSS 80%, React 75%, Git 68%, SQL 60%, DSA 50%) and technology tags.
   - **Experience Timeline**: Journey from 2021 self-directed learning to active 2024–Present full-stack projects.
   - **Education**: Bachelor of Computer Applications (BCA) at City College, Bangalore (Expected 2027) with core computer science coursework.
 - **Services Showcase**: Web Design, Full-Stack Software Development, and UI/UX Design with 3D tilt hover effects.
-- **Featured Projects Grid**:
-  - 🎮 **Treasure Hunt Game** (Vanilla JS, state management, timer logic, deployed on GitHub Pages)
+- **Featured Projects Grid & Architectural Case Studies**:
+  - 🎮 **Treasure Hunt Game** (Vanilla JS, state machine, timer logic, deployed on GitHub Pages)
   - 🧠 **Dynamic Quiz Platform** (Advanced DOM manipulation, score calculation, timed visual feedback)
   - 🌐 **Social Media Community App** (React.js, REST APIs, creator networking)
   - 🎵 **Music Discovery App** (Audio streaming UI, waveform visuals)
   - 🛍️ **Global Shopping App** (E-commerce catalog, responsive cart)
   - 📖 **3D Book Resume** (Interactive 3D book experience with page-turn transitions)
-  - Category filters: All, Web Apps, Games & Logic, UI & Media.
-- **Contact Section**: One-click email copy button, social links (GitHub, LinkedIn), direct contact form with instant validation and email drafting.
+  - **Deep Case Study Modals**: Problem statement, engineering approach, measurable metrics (FPS, bundle size, Lighthouse), and architectural layers.
+- **Technical Insights (Engineering Blog)**:
+  - In-depth articles covering 3D CSS transforms, Web Audio API procedural synthesis, Model Context Protocol integration, and high-performance DOM engineering.
+- **System Architecture & Model Context Protocol (MCP) Console**:
+  - Live system architecture topology viewer.
+  - Interactive MCP Tool Runner executing JSON-RPC queries (`portfolio.get_projects`, `portfolio.get_resume`, `portfolio.get_project`, `portfolio.search_posts`).
+  - REST API specifications & Prisma database schema explorer.
+- **Floating "Portfolio Guide" AI Agent**:
+  - Interactive conversational assistant powered by simulated MCP tool calling.
+  - Quick-prompt chips, real-time tool execution status badges, and strict prompt-injection guardrails.
+- **Contact & Security**:
+  - Anti-spam honeypot field, local message queue persistence, email copy button, and direct mailto drafting.
 
 ---
 

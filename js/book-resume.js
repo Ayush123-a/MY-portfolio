@@ -135,24 +135,28 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2 class="page-chapter-title">Core Skills</h2>
         <div class="book-skill-bars">
           <div class="b-skill-item">
-            <div class="b-skill-top"><span class="b-skill-name">JavaScript (ES6+)</span><span class="b-skill-pct">90%</span></div>
-            <div class="b-skill-track"><div class="b-skill-fill" style="width: 90%;"></div></div>
-          </div>
-          <div class="b-skill-item">
-            <div class="b-skill-top"><span class="b-skill-name">React.js (Hooks, Context)</span><span class="b-skill-pct">85%</span></div>
-            <div class="b-skill-track"><div class="b-skill-fill" style="width: 85%;"></div></div>
-          </div>
-          <div class="b-skill-item">
-            <div class="b-skill-top"><span class="b-skill-name">HTML5 & Modern CSS3</span><span class="b-skill-pct">92%</span></div>
-            <div class="b-skill-track"><div class="b-skill-fill" style="width: 92%;"></div></div>
-          </div>
-          <div class="b-skill-item">
-            <div class="b-skill-top"><span class="b-skill-name">SQL (MySQL & Queries)</span><span class="b-skill-pct">80%</span></div>
+            <div class="b-skill-top"><span class="b-skill-name">JavaScript (ES6+)</span><span class="b-skill-pct">80%</span></div>
             <div class="b-skill-track"><div class="b-skill-fill" style="width: 80%;"></div></div>
           </div>
           <div class="b-skill-item">
-            <div class="b-skill-top"><span class="b-skill-name">Git & GitHub Version Control</span><span class="b-skill-pct">88%</span></div>
-            <div class="b-skill-track"><div class="b-skill-fill" style="width: 88%;"></div></div>
+            <div class="b-skill-top"><span class="b-skill-name">HTML5 & Modern CSS3</span><span class="b-skill-pct">80%</span></div>
+            <div class="b-skill-track"><div class="b-skill-fill" style="width: 80%;"></div></div>
+          </div>
+          <div class="b-skill-item">
+            <div class="b-skill-top"><span class="b-skill-name">React.js (Hooks, Context)</span><span class="b-skill-pct">75%</span></div>
+            <div class="b-skill-track"><div class="b-skill-fill" style="width: 75%;"></div></div>
+          </div>
+          <div class="b-skill-item">
+            <div class="b-skill-top"><span class="b-skill-name">Git & GitHub Version Control</span><span class="b-skill-pct">68%</span></div>
+            <div class="b-skill-track"><div class="b-skill-fill" style="width: 68%;"></div></div>
+          </div>
+          <div class="b-skill-item">
+            <div class="b-skill-top"><span class="b-skill-name">SQL (MySQL & Queries)</span><span class="b-skill-pct">60%</span></div>
+            <div class="b-skill-track"><div class="b-skill-fill" style="width: 60%;"></div></div>
+          </div>
+          <div class="b-skill-item">
+            <div class="b-skill-top"><span class="b-skill-name">Data Structures & Algorithms</span><span class="b-skill-pct">50%</span></div>
+            <div class="b-skill-track"><div class="b-skill-fill" style="width: 50%;"></div></div>
           </div>
         </div>
         <div class="page-footer-num">— 3 —</div>

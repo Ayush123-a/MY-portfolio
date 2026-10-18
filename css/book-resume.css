@@ -30,21 +30,21 @@
   --font-sans: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* Midnight Navy / Dark Leather Theme */
+/* Cyber Obsidian / Neon Pink Theme */
 [data-book-theme="dark"] {
-  --book-bg: #07090e;
-  --book-leather: #0d131f;
-  --book-spine: #070a10;
-  --book-gold: #00f2fe;
-  --book-gold-light: #70f7ff;
-  --book-gold-border: rgba(0, 242, 254, 0.4);
-  --book-page: #131b2c;
-  --book-page-aged: #0f1624;
-  --book-ink: #f1f5f9;
-  --book-ink-muted: #94a3b8;
-  --book-primary: #38bdf8;
-  --book-border: rgba(255, 255, 255, 0.1);
-  --book-glow: 0 20px 60px rgba(0, 0, 0, 0.85), 0 0 45px rgba(0, 242, 254, 0.18);
+  --book-bg: #050508;
+  --book-leather: #120e18;
+  --book-spine: #0a060e;
+  --book-gold: #ff2a85;
+  --book-gold-light: #ff7eb3;
+  --book-gold-border: rgba(255, 42, 133, 0.45);
+  --book-page: #100d17;
+  --book-page-aged: #0d0a14;
+  --book-ink: #fce7f3;
+  --book-ink-muted: #a39eb2;
+  --book-primary: #ff0844;
+  --book-border: rgba(255, 42, 133, 0.2);
+  --book-glow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba(255, 42, 133, 0.25);
 }
 
 /* Emerald Royal Theme */

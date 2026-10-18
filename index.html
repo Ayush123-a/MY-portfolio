@@ -15,7 +15,7 @@
   <meta property="og:image" content="assets/images/user.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="icon" type="image/png" href="assets/images/cube-emblem-pink.png">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
@@ -36,8 +36,8 @@
   <header id="navbar">
     <div class="container nav-container">
       <a href="#hero" class="brand-logo" aria-label="Ayush Home">
-        <img src="assets/images/logo.png" alt="Ayush Logo" onerror="this.style.display='none'">
-        <span class="brand-text">Ayush<span>.dev</span></span>
+        <img src="assets/images/cube-emblem-pink.png" alt="Ayush 3D Isometric Cube Logo" class="brand-cube-logo">
+        <span class="brand-text">Ayush<span style="color: var(--primary);">.dev</span></span>
       </a>
 
       <ul class="nav-links" id="navLinks">
@@ -45,10 +45,15 @@
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#insights">Insights</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
+        <button id="openMcpModalNavBtn" class="btn-mcp-nav" title="Inspect System Architecture & Model Context Protocol (MCP)">
+          <i class="fa-solid fa-cube"></i>
+          <span>Architecture & MCP</span>
+        </button>
         <a href="resume.html" class="btn-book-nav" title="Open Interactive 3D Book Resume">
           <i class="fa-solid fa-book-open"></i>
           <span>3D Book Resume</span>
@@ -92,7 +97,11 @@
             <i class="fa-solid fa-book-journal-whills"></i>
             <span>Interactive 3D Resume</span>
           </a>
-          <a href="assets/Ayush_Singh_Rawat_Resume.pdf" download="Ayush_Singh_Rawat_Resume.pdf" class="btn-secondary">
+          <button id="heroMcpBtn" class="btn-secondary btn-mcp-hero" title="Inspect System Architecture & MCP">
+            <i class="fa-solid fa-network-wired"></i>
+            <span>Architecture & MCP</span>
+          </button>
+          <a href="assets/Ayush_Singh_Rawat_Resume.pdf" download="Ayush_Singh_Rawat_Resume.pdf" class="btn-ghost-cv" title="Download Official Resume PDF">
             <i class="fa-solid fa-file-arrow-down"></i>
             <span>Download CV</span>
           </a>
@@ -112,28 +121,67 @@
         </div>
       </div>
 
-      <!-- Hero Visual / Avatar Showcase -->
+      <!-- Hero Visual: 3D Isometric Hypercube Showcase & Switcher -->
       <div class="hero-visual">
-        <div class="avatar-frame">
+        <!-- Interactive View Switcher -->
+        <div class="hero-visual-switcher" id="heroVisualSwitcher">
+          <button class="switcher-tab active" data-view="cube" id="switchCubeBtn" type="button" aria-label="Switch to 3D Hypercube Core">
+            <i class="fa-solid fa-cube"></i>
+            <span>3D Hypercube Core</span>
+          </button>
+          <button class="switcher-tab" data-view="avatar" id="switchAvatarBtn" type="button" aria-label="Switch to Developer Avatar">
+            <i class="fa-solid fa-user-astronaut"></i>
+            <span>Developer Avatar</span>
+          </button>
+        </div>
+
+        <!-- 3D Isometric Hypercube Showcase Stage -->
+        <div class="cube-stage-3d" id="cubeStage">
+          <div class="cube-orbital-backdrop" aria-hidden="true">
+            <div class="orbital-glow-ring"></div>
+            <div class="orbital-laser-track"></div>
+          </div>
+          
+          <div class="cube-emblem-wrapper" id="cubeEmblemCard" title="Interactive 3D Hypercube Interface">
+            <img src="assets/images/cube-emblem-pink.png" alt="3D Isometric Hypercube System Emblem" class="cube-hero-emblem">
+            
+            <!-- Satellite Axis Markers -->
+            <div class="satellite-marker marker-top">
+              <span class="marker-dot"></span>
+              <span class="marker-tag">AXIS [Y] : ARCHITECTURE</span>
+            </div>
+            <div class="satellite-marker marker-left">
+              <span class="marker-dot"></span>
+              <span class="marker-tag">AXIS [X] : REACT.JS</span>
+            </div>
+            <div class="satellite-marker marker-right">
+              <span class="marker-dot"></span>
+              <span class="marker-tag">AXIS [Z] : MCP SYSTEM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Developer Portrait Frame (Accessible via toggle) -->
+        <div class="avatar-frame hidden" id="avatarStage">
           <div class="avatar-inner">
             <img src="assets/images/user.png" alt="Ayush Singh Rawat profile photo">
           </div>
         </div>
 
-        <!-- Floating Badges -->
+        <!-- Floating Badges in Pink & Black Cyber Theme -->
         <div class="floating-chip chip-react">
-          <i class="fa-brands fa-react" style="color: #61dafb;"></i>
+          <i class="fa-brands fa-react" style="color: #ff2a85;"></i>
           <span>React.js Specialist</span>
         </div>
 
-        <div class="floating-chip chip-js">
-          <i class="fa-brands fa-js" style="color: #f7df1e;"></i>
-          <span>JavaScript ES6+</span>
+        <div class="floating-chip chip-cube">
+          <i class="fa-solid fa-cube" style="color: #ff5e9a;"></i>
+          <span>3D Isometric Interface</span>
         </div>
 
         <div class="floating-chip chip-bca">
-          <i class="fa-solid fa-graduation-cap" style="color: #10b981;"></i>
-          <span>BCA (Expected 2027)</span>
+          <i class="fa-solid fa-graduation-cap" style="color: #ff0844;"></i>
+          <span>BCA Scholar (2027)</span>
         </div>
       </div>
     </div>
@@ -220,36 +268,6 @@
               <div class="skill-bar-item">
                 <div class="skill-bar-top">
                   <span class="skill-name"><i class="fa-brands fa-js" style="color:#f7df1e;"></i> JavaScript (ES6+ / DOM)</span>
-                  <span class="skill-pct">90%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-progress" data-width="90" style="width: 90%;"></div>
-                </div>
-              </div>
-
-              <div class="skill-bar-item">
-                <div class="skill-bar-top">
-                  <span class="skill-name"><i class="fa-brands fa-react" style="color:#61dafb;"></i> React.js (Hooks & Context)</span>
-                  <span class="skill-pct">85%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-progress" data-width="85" style="width: 85%;"></div>
-                </div>
-              </div>
-
-              <div class="skill-bar-item">
-                <div class="skill-bar-top">
-                  <span class="skill-name"><i class="fa-brands fa-html5" style="color:#e34f26;"></i> HTML5 & Modern CSS3</span>
-                  <span class="skill-pct">92%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-progress" data-width="92" style="width: 92%;"></div>
-                </div>
-              </div>
-
-              <div class="skill-bar-item">
-                <div class="skill-bar-top">
-                  <span class="skill-name"><i class="fa-solid fa-database" style="color:#00758f;"></i> MySQL & Database Design</span>
                   <span class="skill-pct">80%</span>
                 </div>
                 <div class="skill-track">
@@ -259,11 +277,51 @@
 
               <div class="skill-bar-item">
                 <div class="skill-bar-top">
-                  <span class="skill-name"><i class="fa-brands fa-git-alt" style="color:#f05032;"></i> Git & GitHub Version Control</span>
-                  <span class="skill-pct">88%</span>
+                  <span class="skill-name"><i class="fa-brands fa-html5" style="color:#e34f26;"></i> HTML5 & Modern CSS3</span>
+                  <span class="skill-pct">80%</span>
                 </div>
                 <div class="skill-track">
-                  <div class="skill-progress" data-width="88" style="width: 88%;"></div>
+                  <div class="skill-progress" data-width="80" style="width: 80%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar-item">
+                <div class="skill-bar-top">
+                  <span class="skill-name"><i class="fa-brands fa-react" style="color:#61dafb;"></i> React.js (Hooks & Context)</span>
+                  <span class="skill-pct">75%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-progress" data-width="75" style="width: 75%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar-item">
+                <div class="skill-bar-top">
+                  <span class="skill-name"><i class="fa-brands fa-git-alt" style="color:#f05032;"></i> Git & GitHub Version Control</span>
+                  <span class="skill-pct">68%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-progress" data-width="68" style="width: 68%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar-item">
+                <div class="skill-bar-top">
+                  <span class="skill-name"><i class="fa-solid fa-database" style="color:#00758f;"></i> MySQL & Database Design</span>
+                  <span class="skill-pct">60%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-progress" data-width="60" style="width: 60%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar-item">
+                <div class="skill-bar-top">
+                  <span class="skill-name"><i class="fa-solid fa-brain" style="color:#a855f7;"></i> Data Structures & Algorithms (DSA)</span>
+                  <span class="skill-pct">50%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-progress" data-width="50" style="width: 50%;"></div>
                 </div>
               </div>
             </div>
@@ -420,169 +478,297 @@
 
       <div class="projects-grid">
         <!-- Project 1: Treasure Hunt Game -->
-        <div class="project-card" data-category="game-logic">
+        <div class="project-card" data-category="game-logic" data-project="treasure-hunt">
           <div class="project-thumb">
             <img src="assets/images/work-1.png" alt="Treasure Hunt Game">
             <div class="project-overlay">
               <a href="https://github.com/Ayush123-a" target="_blank" rel="noopener noreferrer" class="overlay-btn" title="View Source on GitHub">
                 <i class="fa-brands fa-github"></i>
               </a>
-              <a href="#portfolio" class="overlay-btn" title="Details">
+              <button class="overlay-btn open-case-study" data-project="treasure-hunt" title="Read Architectural Case Study">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
+              </button>
             </div>
           </div>
           <div class="project-info">
             <span class="project-category">Interactive Game · Vanilla JS</span>
             <h3 class="project-title">🎮 Treasure Hunt Game</h3>
             <p class="project-description">
-              A fully interactive, browser-based game featuring complex scoring algorithms, item randomization, countdown timer logic, and dynamic state management on GitHub Pages.
+              A fully interactive browser game featuring randomized grid coordinates, dynamic countdown intervals, real-time score multipliers, and zero external runtime dependencies.
             </p>
             <div class="project-tags">
               <span class="project-tag">HTML5</span>
               <span class="project-tag">CSS3</span>
-              <span class="project-tag">JavaScript</span>
-              <span class="project-tag">GitHub Pages</span>
+              <span class="project-tag">JavaScript ES6+</span>
+              <span class="project-tag">State Machine</span>
+            </div>
+            <div class="project-actions-bar">
+              <button class="btn-case-study open-case-study" data-project="treasure-hunt">
+                <i class="fa-solid fa-file-waveform"></i>
+                <span>Case Study</span>
+              </button>
+              <a href="https://github.com/Ayush123-a" target="_blank" rel="noopener noreferrer" class="btn-project-source" title="View GitHub Source">
+                <i class="fa-brands fa-github"></i>
+                <span>Code</span>
+              </a>
             </div>
           </div>
         </div>
 
         <!-- Project 2: Dynamic Quiz Application -->
-        <div class="project-card" data-category="web-app game-logic">
+        <div class="project-card" data-category="web-app game-logic" data-project="quiz-platform">
           <div class="project-thumb">
             <img src="assets/images/work-2.png" alt="Dynamic Quiz Application">
             <div class="project-overlay">
               <a href="https://github.com/Ayush123-a" target="_blank" rel="noopener noreferrer" class="overlay-btn" title="GitHub Code">
                 <i class="fa-brands fa-github"></i>
               </a>
-              <a href="#portfolio" class="overlay-btn" title="Details">
+              <button class="overlay-btn open-case-study" data-project="quiz-platform" title="Read Architectural Case Study">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
+              </button>
             </div>
           </div>
           <div class="project-info">
             <span class="project-category">Web Application · DOM Engine</span>
             <h3 class="project-title">🧠 Dynamic Quiz Platform</h3>
             <p class="project-description">
-              Engineered a dynamic quiz engine utilizing advanced DOM manipulation for instant question rendering, real-time score calculation, and visual feedback for timed questions.
+              High-performance quiz engine with dynamic question pools, instant score calculation, question timer logic, and automated visual performance analytics.
             </p>
             <div class="project-tags">
               <span class="project-tag">JavaScript ES6+</span>
-              <span class="project-tag">DOM API</span>
-              <span class="project-tag">Responsive UI</span>
-              <span class="project-tag">Scalable Engine</span>
+              <span class="project-tag">DOM Engine</span>
+              <span class="project-tag">Score Matrix</span>
+              <span class="project-tag">Modular JS</span>
+            </div>
+            <div class="project-actions-bar">
+              <button class="btn-case-study open-case-study" data-project="quiz-platform">
+                <i class="fa-solid fa-file-waveform"></i>
+                <span>Case Study</span>
+              </button>
+              <a href="https://github.com/Ayush123-a" target="_blank" rel="noopener noreferrer" class="btn-project-source" title="View GitHub Source">
+                <i class="fa-brands fa-github"></i>
+                <span>Code</span>
+              </a>
             </div>
           </div>
         </div>
 
         <!-- Project 3: Social Media App -->
-        <div class="project-card" data-category="web-app ui-services">
+        <div class="project-card" data-category="web-app ui-services" data-project="social-media-app">
           <div class="project-thumb">
             <img src="assets/images/work-3.png" alt="Social Media App">
             <div class="project-overlay">
               <a href="https://github.com/Ayush123-a" target="_blank" rel="noopener noreferrer" class="overlay-btn" title="GitHub Code">
                 <i class="fa-brands fa-github"></i>
               </a>
-              <a href="#portfolio" class="overlay-btn" title="Details">
+              <button class="overlay-btn open-case-study" data-project="social-media-app" title="Read Architectural Case Study">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
+              </button>
             </div>
           </div>
           <div class="project-info">
             <span class="project-category">Full-Stack · Community Platform</span>
             <h3 class="project-title">🌐 Social Media App</h3>
             <p class="project-description">
-              Connects creators and talented people worldwide with live feeds, profile showcases, interactive posts, and clean modern aesthetic styling.
+              Modern creator network connecting global talents with interactive feeds, profile customization, post interactions, and responsive card layouts.
             </p>
             <div class="project-tags">
               <span class="project-tag">React.js</span>
-              <span class="project-tag">Modern UI</span>
               <span class="project-tag">REST APIs</span>
-              <span class="project-tag">Mobile First</span>
+              <span class="project-tag">Custom Hooks</span>
+              <span class="project-tag">Glassmorphism</span>
+            </div>
+            <div class="project-actions-bar">
+              <button class="btn-case-study open-case-study" data-project="social-media-app">
+                <i class="fa-solid fa-file-waveform"></i>
+                <span>Case Study</span>
+              </button>
+              <a href="https://github.com/Ayush123-a" target="_blank" rel="noopener noreferrer" class="btn-project-source" title="View GitHub Source">
+                <i class="fa-brands fa-github"></i>
+                <span>Code</span>
+              </a>
             </div>
           </div>
         </div>
 
         <!-- Project 4: Music Streaming App -->
-        <div class="project-card" data-category="web-app ui-services">
+        <div class="project-card" data-category="web-app ui-services" data-project="music-discovery-app">
           <div class="project-thumb">
             <img src="assets/images/work-2.png" alt="Music App">
             <div class="project-overlay">
               <a href="https://github.com/Ayush123-a" target="_blank" rel="noopener noreferrer" class="overlay-btn" title="GitHub Code">
                 <i class="fa-brands fa-github"></i>
               </a>
-              <a href="#portfolio" class="overlay-btn" title="Details">
+              <button class="overlay-btn open-case-study" data-project="music-discovery-app" title="Read Architectural Case Study">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
+              </button>
             </div>
           </div>
           <div class="project-info">
             <span class="project-category">Audio & Streaming · UI/UX</span>
             <h3 class="project-title">🎵 Music Discovery App</h3>
             <p class="project-description">
-              Allows users to discover, stream, and organize diverse music tracks from across the globe with custom playback controls and audio waveform visuals.
+              Global audio streaming UI featuring real-time Web Audio API waveform visualization, custom playback controls, queue management, and playlist curation.
             </p>
             <div class="project-tags">
-              <span class="project-tag">Web Audio</span>
+              <span class="project-tag">Web Audio API</span>
               <span class="project-tag">JavaScript</span>
-              <span class="project-tag">CSS Grid</span>
-              <span class="project-tag">Player UI</span>
+              <span class="project-tag">Waveforms</span>
+              <span class="project-tag">Audio State</span>
+            </div>
+            <div class="project-actions-bar">
+              <button class="btn-case-study open-case-study" data-project="music-discovery-app">
+                <i class="fa-solid fa-file-waveform"></i>
+                <span>Case Study</span>
+              </button>
+              <a href="https://github.com/Ayush123-a" target="_blank" rel="noopener noreferrer" class="btn-project-source" title="View GitHub Source">
+                <i class="fa-brands fa-github"></i>
+                <span>Code</span>
+              </a>
             </div>
           </div>
         </div>
 
         <!-- Project 5: Online Shopping / E-Commerce -->
-        <div class="project-card" data-category="web-app">
+        <div class="project-card" data-category="web-app" data-project="global-shopping-app">
           <div class="project-thumb">
             <img src="assets/images/work-1.png" alt="Online Shopping App">
             <div class="project-overlay">
               <a href="https://github.com/Ayush123-a" target="_blank" rel="noopener noreferrer" class="overlay-btn" title="GitHub Code">
                 <i class="fa-brands fa-github"></i>
               </a>
-              <a href="#portfolio" class="overlay-btn" title="Details">
+              <button class="overlay-btn open-case-study" data-project="global-shopping-app" title="Read Architectural Case Study">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
+              </button>
             </div>
           </div>
           <div class="project-info">
             <span class="project-category">E-Commerce Platform</span>
             <h3 class="project-title">🛍️ Global Shopping App</h3>
             <p class="project-description">
-              An e-commerce experience connecting buyers with worldwide products, featuring instant filtering, cart management, and seamless responsive design.
+              Complete e-commerce client with dynamic catalog filtering, reactive shopping cart state, price calculations, and responsive mobile-optimized drawer checkout.
             </p>
             <div class="project-tags">
               <span class="project-tag">React.js</span>
-              <span class="project-tag">State Management</span>
-              <span class="project-tag">Cart Logic</span>
-              <span class="project-tag">Payment Mock</span>
+              <span class="project-tag">Cart State</span>
+              <span class="project-tag">LocalStorage</span>
+              <span class="project-tag">E-Commerce</span>
+            </div>
+            <div class="project-actions-bar">
+              <button class="btn-case-study open-case-study" data-project="global-shopping-app">
+                <i class="fa-solid fa-file-waveform"></i>
+                <span>Case Study</span>
+              </button>
+              <a href="https://github.com/Ayush123-a" target="_blank" rel="noopener noreferrer" class="btn-project-source" title="View GitHub Source">
+                <i class="fa-brands fa-github"></i>
+                <span>Code</span>
+              </a>
             </div>
           </div>
         </div>
 
         <!-- Project 6: Interactive 3D Book Resume -->
-        <div class="project-card" data-category="web-app ui-services">
+        <div class="project-card" data-category="web-app ui-services" data-project="book-resume">
           <div class="project-thumb">
             <img src="assets/images/work-3.png" alt="Interactive 3D Book Resume">
             <div class="project-overlay">
               <a href="resume.html" class="overlay-btn" title="Launch 3D Book Resume">
                 <i class="fa-solid fa-book-open"></i>
               </a>
+              <button class="overlay-btn open-case-study" data-project="book-resume" title="Read Architectural Case Study">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
             </div>
           </div>
           <div class="project-info">
             <span class="project-category">Interactive Experience · 3D</span>
             <h3 class="project-title">📖 3D Book-Style Resume</h3>
             <p class="project-description">
-              An interactive realistic book resume with 3D page flip transitions, realistic synthesized audio, antique parchment texture, and one-click ATS export.
+              Pioneering 3D interactive book resume featuring realistic page-flip transitions, zero-dependency Web Audio sound synthesis, 3 antique themes, and ATS print export.
             </p>
             <div class="project-tags">
-              <span class="project-tag">3D CSS Transforms</span>
+              <span class="project-tag">3D Transforms</span>
               <span class="project-tag">Web Audio API</span>
               <span class="project-tag">Touch Swipes</span>
-              <span class="project-tag">ATS Print Ready</span>
+              <span class="project-tag">ATS Engine</span>
+            </div>
+            <div class="project-actions-bar">
+              <button class="btn-case-study open-case-study" data-project="book-resume">
+                <i class="fa-solid fa-file-waveform"></i>
+                <span>Case Study</span>
+              </button>
+              <a href="resume.html" class="btn-project-demo" title="Launch 3D Experience">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Launch 3D</span>
+              </a>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering Insights & Technical Blog Section -->
+  <section id="insights">
+    <div class="container">
+      <div class="section-tag"><i class="fa-solid fa-code-branch"></i> Engineering & Research</div>
+      <h2 class="section-title">Technical <span class="gradient-text">Insights</span></h2>
+      <p class="section-desc">In-depth case studies, architectural blueprints, and engineering notes on modern web technologies and AI agent integrations.</p>
+
+      <div class="insights-grid">
+        <!-- Article 1 -->
+        <article class="insight-card" data-article="3d-book-engine">
+          <div class="insight-meta">
+            <span class="insight-tag">Interactive 3D · Web Audio</span>
+            <span class="insight-read-time"><i class="fa-regular fa-clock"></i> 5 min read</span>
+          </div>
+          <h3 class="insight-title">Building a Zero-Dependency 3D Book Engine with Web Audio API</h3>
+          <p class="insight-excerpt">
+            How I engineered a realistic two-page perspective spread, CSS 3D matrix flips, synthetic parchment audio without MP3 assets, and seamless ATS-compliant print layouts.
+          </p>
+          <div class="insight-footer">
+            <button class="btn-read-insight open-article-btn" data-article="3d-book-engine">
+              <span>Read Full Breakdown</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="insight-card" data-article="mcp-portfolio-agent">
+          <div class="insight-meta">
+            <span class="insight-tag">Agentic AI · Model Context Protocol</span>
+            <span class="insight-read-time"><i class="fa-regular fa-clock"></i> 6 min read</span>
+          </div>
+          <h3 class="insight-title">Connecting AI Agents to Portfolios with Model Context Protocol (MCP)</h3>
+          <p class="insight-excerpt">
+            A deep-dive into standardized tool exposure, schema contracts, JSON-RPC communication, prompt injection defense, and client-side agent orchestration.
+          </p>
+          <div class="insight-footer">
+            <button class="btn-read-insight open-article-btn" data-article="mcp-portfolio-agent">
+              <span>Read Full Breakdown</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="insight-card" data-article="dom-game-engineering">
+          <div class="insight-meta">
+            <span class="insight-tag">Vanilla JS · High Performance</span>
+            <span class="insight-read-time"><i class="fa-regular fa-clock"></i> 4 min read</span>
+          </div>
+          <h3 class="insight-title">Vanilla JavaScript DOM Engineering: 60 FPS State Machines</h3>
+          <p class="insight-excerpt">
+            Architectural patterns for fluid interactive games and timed quiz platforms without bloated UI frameworks, optimizing memory footprint and browser repaint cycles.
+          </p>
+          <div class="insight-footer">
+            <button class="btn-read-insight open-article-btn" data-article="dom-game-engineering">
+              <span>Read Full Breakdown</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -698,6 +884,12 @@
         <!-- Contact Form -->
         <div class="contact-form-box">
           <form id="contactForm">
+            <!-- Anti-Spam Honeypot Field (Invisible to real users, per authentication-and-security.md) -->
+            <div class="hp-check-wrap" style="display:none;" aria-hidden="true">
+              <label for="hpSecurityCheck">Leave this field blank</label>
+              <input type="text" name="_hp_security_check" id="hpSecurityCheck" tabindex="-1" autocomplete="off">
+            </div>
+
             <div class="form-group">
               <label for="userName" class="form-label">Your Name</label>
               <input type="text" id="userName" class="form-control" placeholder="e.g. John Doe" required>
@@ -730,17 +922,328 @@
   <footer>
     <div class="container footer-content">
       <div class="footer-text">
-        © 2025–2026 <strong>Ayush Singh Rawat</strong>. Made with 💙 Passion & Code.
+        © 2025–2026 <strong>Ayush Singh Rawat</strong>. Engineered with modern standards, MCP tools, and clean code.
       </div>
       <div class="footer-nav">
         <a href="#hero">Home</a>
         <a href="#about">About</a>
         <a href="#portfolio">Projects</a>
+        <a href="#insights">Insights</a>
+        <a href="#" id="footerMcpBtn">Architecture & MCP</a>
         <a href="resume.html">3D Book Resume</a>
         <a href="assets/Ayush_Singh_Rawat_Resume.pdf" download>Download CV</a>
       </div>
     </div>
   </footer>
+
+  <!-- ===================================================================
+       1. CASE STUDY MODAL (Architectural Deep Dive)
+       =================================================================== -->
+  <div id="caseStudyModal" class="system-modal" aria-hidden="true" role="dialog" aria-labelledby="caseStudyTitle">
+    <div class="system-modal-backdrop" id="caseStudyBackdrop"></div>
+    <div class="system-modal-dialog case-study-dialog">
+      <button class="modal-close-btn" id="closeCaseStudyBtn" aria-label="Close Case Study">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="caseStudyContent" class="case-study-body">
+        <!-- Injected dynamically by js/portfolio.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       2. ENGINEERING INSIGHT ARTICLE READER MODAL
+       =================================================================== -->
+  <div id="blogArticleModal" class="system-modal" aria-hidden="true" role="dialog" aria-labelledby="blogArticleTitle">
+    <div class="system-modal-backdrop" id="blogArticleBackdrop"></div>
+    <div class="system-modal-dialog blog-article-dialog">
+      <button class="modal-close-btn" id="closeBlogArticleBtn" aria-label="Close Technical Article">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="blogArticleContent" class="blog-article-body">
+        <!-- Injected dynamically by js/portfolio.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       3. SYSTEM ARCHITECTURE & MODEL CONTEXT PROTOCOL (MCP) MODAL
+       =================================================================== -->
+  <div id="mcpModal" class="system-modal" aria-hidden="true" role="dialog" aria-labelledby="mcpModalTitle">
+    <div class="system-modal-backdrop" id="mcpModalBackdrop"></div>
+    <div class="system-modal-dialog mcp-modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-header-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <div>
+            <h3 id="mcpModalTitle">System Architecture & Model Context Protocol (MCP) Console</h3>
+            <p class="modal-subtitle">Live inspection of Ayush's engineering stack, MCP server tools, and API layers</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="closeMcpModalBtn" aria-label="Close Architecture Inspector">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- MCP Tab Navigation -->
+      <div class="mcp-tab-nav">
+        <button class="mcp-tab-btn active" data-mcptab="mcp-arch">
+          <i class="fa-solid fa-diagram-project"></i> Architecture Topology
+        </button>
+        <button class="mcp-tab-btn" data-mcptab="mcp-runner">
+          <i class="fa-solid fa-terminal"></i> Live MCP Tool Runner
+        </button>
+        <button class="mcp-tab-btn" data-mcptab="mcp-api">
+          <i class="fa-solid fa-server"></i> API Specification
+        </button>
+        <button class="mcp-tab-btn" data-mcptab="mcp-db">
+          <i class="fa-solid fa-database"></i> Database Schema (Prisma)
+        </button>
+      </div>
+
+      <!-- Tab 1: Architecture Topology -->
+      <div class="mcp-tab-content active" id="mcp-arch">
+        <div class="arch-flow-wrapper">
+          <div class="arch-diagram-card">
+            <div class="arch-node node-client">
+              <span class="node-badge">Client Layer</span>
+              <div class="node-title"><i class="fa-solid fa-laptop-code"></i> Browser / Recruiter</div>
+              <p class="node-desc">Next.js & Vanilla ES6 · 3D Canvas Engine · Accessible UI</p>
+            </div>
+            <div class="arch-connector"><i class="fa-solid fa-arrow-down"></i> HTTP / WebSockets</div>
+            <div class="arch-node node-api">
+              <span class="node-badge">API Layer</span>
+              <div class="node-title"><i class="fa-solid fa-bolt"></i> REST API Router (/api/*)</div>
+              <p class="node-desc">Validation (Zod) · Rate Limiting (60/min) · Auth Security</p>
+            </div>
+            <div class="arch-connector"><i class="fa-solid fa-arrow-down"></i> Tool Dispatch</div>
+            <div class="arch-split-row">
+              <div class="arch-node node-agent">
+                <span class="node-badge">Agentic AI</span>
+                <div class="node-title"><i class="fa-solid fa-robot"></i> Agent Orchestrator</div>
+                <p class="node-desc">Prompt Guardrails · System Context · History</p>
+              </div>
+              <div class="arch-node node-mcp">
+                <span class="node-badge">Standard Protocol</span>
+                <div class="node-title"><i class="fa-solid fa-network-wired"></i> Portfolio MCP Server</div>
+                <p class="node-desc">Stdio/JSON-RPC Transport · Tool Allow-List</p>
+              </div>
+            </div>
+            <div class="arch-connector"><i class="fa-solid fa-arrow-down"></i> Typed Data Fetch</div>
+            <div class="arch-node node-db">
+              <span class="node-badge">Persistence</span>
+              <div class="node-title"><i class="fa-solid fa-database"></i> PostgreSQL & Prisma ORM</div>
+              <p class="node-desc">Indexed Queries · Project Schemas · Contact Logs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Interactive MCP Tool Runner -->
+      <div class="mcp-tab-content" id="mcp-runner">
+        <div class="mcp-runner-grid">
+          <div class="mcp-controls-panel">
+            <label class="form-label" for="mcpToolSelect">Select Registered MCP Tool:</label>
+            <select id="mcpToolSelect" class="form-control">
+              <option value="get_projects">portfolio.get_projects({ featured: true })</option>
+              <option value="get_project_treasure">portfolio.get_project({ slug: "treasure-hunt" })</option>
+              <option value="get_project_book">portfolio.get_project({ slug: "book-resume" })</option>
+              <option value="get_resume">portfolio.get_resume()</option>
+              <option value="search_posts">portfolio.search_posts({ query: "Web Audio" })</option>
+              <option value="system_status">portfolio.inspect_system_architecture()</option>
+            </select>
+            <button id="runMcpToolBtn" class="btn-primary" style="margin-top: 14px; width: 100%;">
+              <i class="fa-solid fa-play"></i> Execute JSON-RPC Tool Call
+            </button>
+            <div class="mcp-tool-info-box">
+              <small class="text-muted"><i class="fa-solid fa-shield-halved"></i> Sandboxed read-only permissions according to <code>mcp-connection.md</code></small>
+            </div>
+          </div>
+          <div class="mcp-output-panel">
+            <div class="output-panel-header">
+              <span><i class="fa-solid fa-code"></i> JSON-RPC Response (stdout)</span>
+              <span id="mcpExecutionStatus" class="badge-success">Ready</span>
+            </div>
+            <pre id="mcpOutputPre" class="code-pre-box"><code>// Click "Execute JSON-RPC Tool Call" to invoke the live Model Context Protocol server...</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: API Specification -->
+      <div class="mcp-tab-content" id="mcp-api">
+        <div class="api-spec-table-wrapper">
+          <table class="api-spec-table">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Endpoint</th>
+                <th>Access</th>
+                <th>Description</th>
+                <th>Rate Limit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge-get">GET</span></td>
+                <td><code>/api/projects</code></td>
+                <td>Public</td>
+                <td>List published portfolio projects with category filter</td>
+                <td>60 req/min</td>
+              </tr>
+              <tr>
+                <td><span class="badge-get">GET</span></td>
+                <td><code>/api/projects/:slug</code></td>
+                <td>Public</td>
+                <td>Get architectural case study and metrics for a project</td>
+                <td>60 req/min</td>
+              </tr>
+              <tr>
+                <td><span class="badge-get">GET</span></td>
+                <td><code>/api/posts</code></td>
+                <td>Public</td>
+                <td>Fetch engineering articles and research writeups</td>
+                <td>60 req/min</td>
+              </tr>
+              <tr>
+                <td><span class="badge-post">POST</span></td>
+                <td><code>/api/contact</code></td>
+                <td>Public</td>
+                <td>Submit contact inquiry with honeypot & email dispatch</td>
+                <td>5 req/10 min</td>
+              </tr>
+              <tr>
+                <td><span class="badge-post">POST</span></td>
+                <td><code>/api/chat</code></td>
+                <td>Public</td>
+                <td>Streamed Portfolio Guide AI response via MCP orchestration</td>
+                <td>10 req/min</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tab 4: Database Schema -->
+      <div class="mcp-tab-content" id="mcp-db">
+        <div class="db-schema-viewer">
+          <div class="schema-code-block">
+            <div class="schema-header"><i class="fa-solid fa-cube"></i> prisma/schema.prisma</div>
+            <pre class="schema-pre"><code>model Project {
+  id          String       @id @default(uuid())
+  slug        String       @unique
+  title       String
+  summary     String
+  problem     String
+  approach    String
+  results     String
+  repoUrl     String?
+  liveUrl     String?
+  featured    Boolean      @default(false)
+  published   Boolean      @default(true)
+  tags        ProjectTag[]
+  createdAt   DateTime     @default(now())
+}
+
+model Post {
+  id          String       @id @default(uuid())
+  slug        String       @unique
+  title       String
+  excerpt     String
+  content     String
+  readTime    String
+  published   Boolean      @default(true)
+  publishedAt DateTime     @default(now())
+}
+
+model ContactMessage {
+  id          String       @id @default(uuid())
+  name        String
+  email       String
+  body        String
+  ipHash      String
+  handled     Boolean      @default(false)
+  createdAt   DateTime     @default(now())
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       4. FLOATING "PORTFOLIO GUIDE" AI AGENT (Chat Assistant & MCP Client)
+       =================================================================== -->
+  <div class="ai-agent-widget">
+    <!-- Floating Trigger Button -->
+    <button id="aiChatToggle" class="ai-chat-toggle-btn" aria-label="Open Portfolio Guide AI Assistant">
+      <span class="ai-status-pulse"></span>
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+      <span class="ai-toggle-label">Ask Portfolio AI</span>
+    </button>
+
+    <!-- Expanded Chat Card -->
+    <div id="aiAssistantContainer" class="ai-assistant-card" aria-hidden="true">
+      <div class="ai-card-header">
+        <div class="ai-header-info">
+          <div class="ai-avatar-badge">
+            <i class="fa-solid fa-robot"></i>
+            <span class="badge-online"></span>
+          </div>
+          <div>
+            <h4 class="ai-title">Portfolio Guide Agent</h4>
+            <span class="ai-subtitle"><i class="fa-solid fa-circle-check text-pink"></i> MCP Tools Connected</span>
+          </div>
+        </div>
+        <div class="ai-header-actions">
+          <button id="aiMcpOpenBtn" class="ai-tool-header-btn" title="Inspect MCP Tools">
+            <i class="fa-solid fa-network-wired"></i>
+          </button>
+          <button id="aiMinimizeBtn" class="ai-tool-header-btn" title="Minimize AI Chat">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+          <button id="aiCloseBtn" class="ai-tool-header-btn" title="Close AI Chat">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Real-Time Tool Execution Indicator -->
+      <div id="aiToolIndicator" class="ai-tool-indicator" style="display: none;">
+        <span class="spinner-dot"></span>
+        <span id="aiToolIndicatorText">Executing MCP tool...</span>
+      </div>
+
+      <!-- Messages Stream -->
+      <div id="aiMessagesContainer" class="ai-messages-container">
+        <!-- Welcoming Initial Message -->
+        <div class="ai-msg ai-msg-bot">
+          <div class="ai-msg-avatar"><i class="fa-solid fa-robot"></i></div>
+          <div class="ai-msg-bubble">
+            <p>👋 Hello! I am Ayush's <strong>Portfolio Guide Agent</strong>.</p>
+            <p>I have direct read access to his projects, 3D resume architecture, skills, and engineering case studies via <strong>Model Context Protocol (MCP)</strong>.</p>
+            <p>How can I assist you today?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Suggestion Pills -->
+      <div class="ai-suggestions-bar">
+        <button class="ai-prompt-chip" data-prompt="What projects did Ayush engineer?">🎮 Top Projects</button>
+        <button class="ai-prompt-chip" data-prompt="Explain the 3D Book Resume architecture">📖 3D Book Tech</button>
+        <button class="ai-prompt-chip" data-prompt="What are his core technical skills?">🛠️ Core Skills</button>
+        <button class="ai-prompt-chip" data-prompt="Tell me about Ayush's education in Bangalore">🎓 Education</button>
+        <button class="ai-prompt-chip" data-prompt="Help me draft an email to contact Ayush">✉️ Contact Ayush</button>
+      </div>
+
+      <!-- Chat Input Form -->
+      <form id="aiChatForm" class="ai-chat-input-form">
+        <input type="text" id="aiChatInput" class="ai-chat-input" placeholder="Ask about projects, skills, tech stack..." autocomplete="off" required>
+        <button type="submit" class="ai-send-btn" aria-label="Send Message">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="js/portfolio.js"></script>
