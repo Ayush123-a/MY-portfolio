@@ -87,9 +87,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section, header');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar?.classList.add('scrolled');
+    if (window.scrollY > 180) {
+      navbar?.classList.add('visible');
+      if (window.scrollY > 300) {
+        navbar?.classList.add('scrolled');
+      } else {
+        navbar?.classList.remove('scrolled');
+      }
     } else {
+      navbar?.classList.remove('visible');
       navbar?.classList.remove('scrolled');
     }
 
@@ -146,46 +152,46 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. DYNAMIC TYPEWRITER EFFECT IN HERO
   // ===================================================================
   const typedTarget = document.getElementById('typedText');
-  const words = [
-    'Full-Stack Web Developer',
-    'React.js Specialist',
-    'BCA Student @ City College',
-    'Interactive UI/UX Designer',
-    'Generative AI & MCP Architect'
-  ];
+  if (typedTarget) {
+    const words = [
+      'Full-Stack Web Development',
+      'React.js & Modern Frontend',
+      'Computer Applications (BCA)',
+      'Data Structures & Algorithms',
+      'Generative AI & Modern Systems'
+    ];
 
-  let wordIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  let typeSpeed = 100;
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typeSpeed = 100;
 
-  function typeEffect() {
-    if (!typedTarget) return;
+    function typeEffect() {
+      const currentWord = words[wordIndex];
+      if (isDeleting) {
+        typedTarget.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+        typeSpeed = 40;
+      } else {
+        typedTarget.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+        typeSpeed = 90;
+      }
 
-    const currentWord = words[wordIndex];
-    if (isDeleting) {
-      typedTarget.textContent = currentWord.substring(0, charIndex - 1);
-      charIndex--;
-      typeSpeed = 40;
-    } else {
-      typedTarget.textContent = currentWord.substring(0, charIndex + 1);
-      charIndex++;
-      typeSpeed = 90;
+      if (!isDeleting && charIndex === currentWord.length) {
+        isDeleting = true;
+        typeSpeed = 1600;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        typeSpeed = 400;
+      }
+
+      setTimeout(typeEffect, typeSpeed);
     }
 
-    if (!isDeleting && charIndex === currentWord.length) {
-      isDeleting = true;
-      typeSpeed = 1600;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      wordIndex = (wordIndex + 1) % words.length;
-      typeSpeed = 400;
-    }
-
-    setTimeout(typeEffect, typeSpeed);
+    typeEffect();
   }
-
-  typeEffect();
 
   // ===================================================================
   // 4. INTERACTIVE ABOUT ME TABS & ANIMATED METERS
@@ -689,10 +695,10 @@ if (detectInjectionAttempt(userInput)) {
             tools: ['Git', 'GitHub', 'VS Code', 'Model Context Protocol (MCP)', 'Linux CLI', 'Web Audio API']
           },
           contacts: {
-            email: 'ayushsinghrawat76456@gmail.com',
+            email: 'Ayushsinghrawat76456@gmail.com',
             phone: '+91 8088954420',
             github: 'https://github.com/Ayush123-a',
-            linkedin: 'https://linkedin.com/in/ayush-rawat-a126942b2'
+            linkedin: 'https://www.linkedin.com/in/ayush-rawat-a126942b2/'
           }
         }
       };
@@ -912,11 +918,11 @@ if (detectInjectionAttempt(userInput)) {
         appendAiMessage('bot', `
           <p>Ayush's core technical proficiencies verified via <code>portfolio.get_resume()</code>:</p>
           <ul style="padding-left: 18px; margin: 8px 0; font-size: 0.86rem; line-height: 1.6;">
-            <li><strong>Frontend:</strong> JavaScript (ES6+ 80%), HTML5 & Modern CSS3 (80%), React.js (75%), Web Audio API</li>
+            <li><strong>Frontend:</strong> JavaScript (ES6+ 60%), HTML5 & Modern CSS3 (60%), React.js (60%), Web Audio API</li>
             <li><strong>Backend & Data:</strong> MySQL & Relational Schema (60%), RESTful APIs, Node.js basics</li>
-            <li><strong>Core CS & Tooling:</strong> Git & GitHub (68%), Data Structures & Algorithms (50%), Model Context Protocol (MCP)</li>
+            <li><strong>Core CS & Tooling:</strong> Git & GitHub (60%), Data Structures & Algorithms (60%), Model Context Protocol (MCP)</li>
           </ul>
-          <p>He specializes in writing clean, modular Vanilla JS and React components with zero unnecessary bundle bloat.</p>
+          <p>He is actively learning and writing clean, modular Vanilla JS and React components with zero unnecessary bundle bloat.</p>
         `);
       });
       return;
@@ -946,10 +952,11 @@ if (detectInjectionAttempt(userInput)) {
         appendAiMessage('bot', `
           <p>📬 Ayush is currently available for developer internships, freelance projects, and full-time software engineering roles!</p>
           <ul style="padding-left: 18px; margin: 8px 0; font-size: 0.86rem; line-height: 1.6;">
-            <li><strong>Email:</strong> <a href="mailto:ayushsinghrawat76456@gmail.com">ayushsinghrawat76456@gmail.com</a></li>
+            <li><strong>Email:</strong> <a href="mailto:Ayushsinghrawat76456@gmail.com">Ayushsinghrawat76456@gmail.com</a></li>
             <li><strong>Phone:</strong> <a href="tel:+918088954420">+91 8088954420</a></li>
             <li><strong>Location:</strong> Bangalore, Karnataka, India</li>
             <li><strong>GitHub:</strong> <a href="https://github.com/Ayush123-a" target="_blank">github.com/Ayush123-a</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ayush-rawat-a126942b2/" target="_blank">linkedin.com/in/ayush-rawat-a126942b2/</a></li>
           </ul>
           <p>You can also use the contact form below or click the copy button to copy his email.</p>
         `);
@@ -1000,11 +1007,11 @@ if (detectInjectionAttempt(userInput)) {
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
       playUiSound('click');
-      const email = 'ayushsinghrawat76456@gmail.com';
+      const email = 'Ayushsinghrawat76456@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
         showToast('Email copied to clipboard! 📋');
       }).catch(() => {
-        showToast('Direct: ayushsinghrawat76456@gmail.com');
+        showToast('Direct: Ayushsinghrawat76456@gmail.com');
       });
     });
   }
@@ -1061,7 +1068,7 @@ if (detectInjectionAttempt(userInput)) {
       // Open mailto link
       const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
       const body = encodeURIComponent(`Hi Ayush,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-      window.location.href = `mailto:ayushsinghrawat76456@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:Ayushsinghrawat76456@gmail.com?subject=${subject}&body=${body}`;
 
       setTimeout(() => {
         formStatus.textContent = 'Thank you! Message drafted and saved. Feel free to send directly.';
@@ -1092,47 +1099,35 @@ if (detectInjectionAttempt(userInput)) {
   };
 
   // ===================================================================
-  // 13. 3D ISOMETRIC HYPERCUBE SHOWCASE & INTERACTIVE SWITCHER
+  // 13. 3D ISOMETRIC HYPERCUBE & AVATAR CARD SHOWCASE INTERACTION
   // ===================================================================
-  const switchCubeBtn = document.getElementById('switchCubeBtn');
-  const switchAvatarBtn = document.getElementById('switchAvatarBtn');
-  const cubeStage = document.getElementById('cubeStage');
-  const avatarStage = document.getElementById('avatarStage');
   const cubeEmblemCard = document.getElementById('cubeEmblemCard');
+  const avatarCard = document.getElementById('avatarCard');
+  const avatarStage = document.getElementById('avatarStage') || document.getElementById('cubeStage');
 
-  if (switchCubeBtn && switchAvatarBtn && cubeStage && avatarStage) {
-    switchCubeBtn.addEventListener('click', () => {
-      playUiSound('click');
-      switchCubeBtn.classList.add('active');
-      switchAvatarBtn.classList.remove('active');
-      cubeStage.classList.remove('hidden');
-      avatarStage.classList.add('hidden');
-    });
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    switchAvatarBtn.addEventListener('click', () => {
-      playUiSound('click');
-      switchAvatarBtn.classList.add('active');
-      switchCubeBtn.classList.remove('active');
-      cubeStage.classList.add('hidden');
-      avatarStage.classList.remove('hidden');
-    });
-  }
+  // Interactive 3D mouse parallax on Cube Emblem / Avatar Card (guarded for reduced motion)
+  if (!prefersReducedMotion) {
+    const tiltElements = [cubeEmblemCard, avatarCard].filter(Boolean);
+    tiltElements.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const rotateX = (-y / rect.height) * 22;
+        const rotateY = (x / rect.width) * 22;
+        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.04, 1.04, 1.04)`;
+      });
 
-  // Interactive 3D mouse parallax on Cube Emblem
-  if (cubeEmblemCard) {
-    cubeEmblemCard.addEventListener('mousemove', (e) => {
-      const rect = cubeEmblemCard.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      const rotateX = (-y / rect.height) * 22;
-      const rotateY = (x / rect.width) * 22;
-      cubeEmblemCard.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.04, 1.04, 1.04)`;
-    });
-
-    cubeEmblemCard.addEventListener('mouseleave', () => {
-      cubeEmblemCard.style.transform = '';
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
     });
   }
+
+  // Initialize Dynamic Cosmic Starfield Canvas across background
+  initSpaceStarsCanvas();
 
   // Keyboard accessibility: ESC closes active modal
   window.addEventListener('keydown', (e) => {
@@ -1145,3 +1140,378 @@ if (detectInjectionAttempt(userInput)) {
   });
 
 });
+
+/**
+ * Dynamic 60fps Cosmic Starfield Engine
+ * Supports #spaceStarsCanvas and #starfieldCanvas
+ * Observes window.matchMedia('(prefers-reduced-motion: reduce)').matches:
+ * When enabled, renders one static frame and skips requestAnimationFrame loop & mouse listeners
+ */
+function initSpaceStarsCanvas() {
+  const canvas = document.getElementById('spaceStarsCanvas') || document.getElementById('starfieldCanvas');
+  const stage = document.getElementById('avatarStage') || document.getElementById('cubeStage');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  let width = canvas.id === 'spaceStarsCanvas' ? (canvas.clientWidth || 580) : window.innerWidth;
+  let height = canvas.id === 'spaceStarsCanvas' ? (canvas.clientHeight || 580) : window.innerHeight;
+  let dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+  function resize() {
+    width = canvas.id === 'spaceStarsCanvas' ? (canvas.clientWidth || 580) : window.innerWidth;
+    height = canvas.id === 'spaceStarsCanvas' ? (canvas.clientHeight || 580) : window.innerHeight;
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
+  }
+  resize();
+
+  const isReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = () => width < 768 || ('ontouchstart' in window);
+
+  // Responsive star count: 65 on mobile, 170 on desktop
+  let starCount = isMobile() ? 65 : 170;
+  let stars = [];
+
+  const starColors = [
+    'rgba(255, 255, 255, ',   // Pure starlight white
+    'rgba(0, 212, 255, ',     // Electric Cosmic Cyan
+    'rgba(56, 189, 248, ',    // Starlight Sky Azure
+    'rgba(143, 110, 192, ',   // Cosmic Nebula Violet
+    'rgba(166, 182, 233, '    // Ethereal Starlight Lavender
+  ];
+
+  function createStar() {
+    const depth = Math.random();
+    return {
+      x: Math.random() * width,
+      y: Math.random() * height,
+      depth: depth,
+      radius: depth > 0.85 ? Math.random() * 1.4 + 1.4 : (depth > 0.4 ? Math.random() * 0.9 + 0.8 : Math.random() * 0.6 + 0.4),
+      vx: (Math.random() - 0.5) * (0.15 + depth * 0.25),
+      vy: (Math.random() - 0.5) * (0.15 + depth * 0.25),
+      baseAlpha: depth > 0.85 ? Math.random() * 0.35 + 0.55 : Math.random() * 0.45 + 0.25,
+      twinkleSpeed: Math.random() * 0.025 + 0.012,
+      twinkleOffset: Math.random() * Math.PI * 2,
+      color: starColors[Math.floor(Math.random() * starColors.length)],
+      isBright: depth > 0.82 && Math.random() < 0.28
+    };
+  }
+
+  function initStars() {
+    starCount = isMobile() ? 65 : 170;
+    stars = [];
+    for (let i = 0; i < starCount; i++) {
+      stars.push(createStar());
+    }
+  }
+  initStars();
+
+  // Render a single static frame for reduced motion mode
+  function renderStaticFrame() {
+    ctx.clearRect(0, 0, width, height);
+
+    // Static constellation links
+    const maxLinkDist = isMobile() ? 52 : 68;
+    ctx.lineWidth = 0.65;
+    const sampleLimit = Math.min(stars.length, isMobile() ? 40 : 85);
+    for (let i = 0; i < sampleLimit; i++) {
+      const s1 = stars[i];
+      if (s1.depth < 0.35) continue;
+      for (let j = i + 1; j < sampleLimit; j++) {
+        const s2 = stars[j];
+        if (s2.depth < 0.35) continue;
+        const dx = s1.x - s2.x;
+        const dy = s1.y - s2.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < maxLinkDist) {
+          const alpha = (1 - dist / maxLinkDist) * 0.16 * s1.baseAlpha * s2.baseAlpha;
+          ctx.strokeStyle = `rgba(0, 212, 255, ${alpha})`;
+          ctx.beginPath();
+          ctx.moveTo(s1.x, s1.y);
+          ctx.lineTo(s2.x, s2.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Static stars rendering
+    for (let i = 0; i < stars.length; i++) {
+      const star = stars[i];
+      const currentAlpha = star.baseAlpha;
+
+      // Glow halo
+      ctx.beginPath();
+      const grad = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, star.radius * 2.6);
+      grad.addColorStop(0, star.color + currentAlpha + ')');
+      grad.addColorStop(1, star.color + '0)');
+      ctx.fillStyle = grad;
+      ctx.arc(star.x, star.y, star.radius * 2.6, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Star core
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.radius * 0.75, 0, Math.PI * 2);
+      ctx.fillStyle = star.color + (currentAlpha > 0.85 ? '1)' : currentAlpha + ')');
+      ctx.fill();
+
+      // 4-point cross diffraction flare
+      if (star.isBright && currentAlpha > 0.65) {
+        ctx.strokeStyle = `rgba(255, 255, 255, ${(currentAlpha - 0.65) * 2.0})`;
+        ctx.lineWidth = 0.8;
+        const flareLen = star.radius * 3.8;
+        ctx.beginPath();
+        ctx.moveTo(star.x - flareLen, star.y);
+        ctx.lineTo(star.x + flareLen, star.y);
+        ctx.moveTo(star.x, star.y - flareLen);
+        ctx.lineTo(star.x, star.y + flareLen);
+        ctx.stroke();
+      }
+    }
+  }
+
+  // Reduced motion guard: render 1 static frame and skip animation loop and mouse listeners
+  if (isReducedMotion) {
+    renderStaticFrame();
+    return;
+  }
+
+  // Resize listener with debouncing
+  let resizeTimeout = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      resize();
+      initStars();
+      if (isReducedMotion) {
+        renderStaticFrame();
+      }
+    }, 150);
+  }, { passive: true });
+
+  // Mouse Parallax (smooth lerp)
+  let mouseTargetX = 0;
+  let mouseTargetY = 0;
+  let mouseX = 0;
+  let mouseY = 0;
+
+  const onMouseMove = (e) => {
+    const cx = width / 2;
+    const cy = height / 2;
+    mouseTargetX = ((e.clientX - cx) / cx) * 24;
+    mouseTargetY = ((e.clientY - cy) / cy) * 24;
+  };
+
+  const onMouseLeave = () => {
+    mouseTargetX = 0;
+    mouseTargetY = 0;
+  };
+
+  window.addEventListener('mousemove', onMouseMove, { passive: true });
+  window.addEventListener('mouseleave', onMouseLeave);
+
+  if (stage) {
+    stage.addEventListener('mousemove', onMouseMove, { passive: true });
+    stage.addEventListener('mouseleave', onMouseLeave);
+  }
+
+  // Shooting star / Meteor system
+  let shootingStars = [];
+  let lastMeteorTime = Date.now();
+  let nextMeteorDelay = 4000 + Math.random() * 4000;
+
+  function spawnMeteor() {
+    const startX = Math.random() * width * 0.9 + width * 0.05;
+    const startY = Math.random() * height * 0.4;
+    const length = Math.random() * 120 + 80;
+    const speed = Math.random() * 7 + 9;
+    const angle = (Math.PI / 4) + (Math.random() - 0.5) * 0.25; // ~45 deg downward
+
+    shootingStars.push({
+      x: startX,
+      y: startY,
+      len: length,
+      speed: speed,
+      dx: Math.cos(angle) * speed,
+      dy: Math.sin(angle) * speed,
+      life: 0,
+      maxLife: Math.random() * 35 + 30,
+      color: Math.random() < 0.6 ? '0, 212, 255' : '166, 182, 233'
+    });
+  }
+
+  let animFrameId = null;
+  let time = 0;
+  let isRunning = true;
+
+  function render() {
+    if (!isRunning) return;
+
+    time += 0.02;
+
+    // Smooth lerp mouse parallax or gentle organic wave on mobile
+    if (isMobile()) {
+      mouseX = Math.sin(time * 0.6) * 10;
+      mouseY = Math.cos(time * 0.5) * 8;
+    } else {
+      mouseX += (mouseTargetX - mouseX) * 0.05;
+      mouseY += (mouseTargetY - mouseY) * 0.05;
+    }
+
+    ctx.clearRect(0, 0, width, height);
+
+    // Dynamic constellation links between close foreground/mid stars
+    const maxLinkDist = isMobile() ? 52 : 68;
+    ctx.lineWidth = 0.65;
+    const sampleLimit = Math.min(stars.length, isMobile() ? 40 : 85);
+    for (let i = 0; i < sampleLimit; i++) {
+      const s1 = stars[i];
+      if (s1.depth < 0.35) continue; // skip distant faint stars
+      const p1x = s1.x + mouseX * s1.depth;
+      const p1y = s1.y + mouseY * s1.depth;
+
+      for (let j = i + 1; j < sampleLimit; j++) {
+        const s2 = stars[j];
+        if (s2.depth < 0.35) continue;
+        const p2x = s2.x + mouseX * s2.depth;
+        const p2y = s2.y + mouseY * s2.depth;
+        const dx = p1x - p2x;
+        const dy = p1y - p2y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < maxLinkDist) {
+          const alpha = (1 - dist / maxLinkDist) * 0.16 * s1.baseAlpha * s2.baseAlpha;
+          ctx.strokeStyle = `rgba(0, 212, 255, ${alpha})`;
+          ctx.beginPath();
+          ctx.moveTo(p1x, p1y);
+          ctx.lineTo(p2x, p2y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Update and draw stars
+    for (let i = 0; i < stars.length; i++) {
+      const star = stars[i];
+      star.x += star.vx;
+      star.y += star.vy;
+
+      // Wrap-around screen bounds
+      if (star.x < -20) star.x = width + 20;
+      if (star.x > width + 20) star.x = -20;
+      if (star.y < -20) star.y = height + 20;
+      if (star.y > height + 20) star.y = -20;
+
+      const renderX = star.x + mouseX * star.depth;
+      const renderY = star.y + mouseY * star.depth;
+
+      const currentAlpha = Math.max(0.1, Math.min(1, 
+        star.baseAlpha + Math.sin(time * star.twinkleSpeed * 50 + star.twinkleOffset) * 0.35
+      ));
+
+      // Star Glow Halo
+      ctx.beginPath();
+      const grad = ctx.createRadialGradient(renderX, renderY, 0, renderX, renderY, star.radius * 2.6);
+      grad.addColorStop(0, star.color + currentAlpha + ')');
+      grad.addColorStop(1, star.color + '0)');
+      ctx.fillStyle = grad;
+      ctx.arc(renderX, renderY, star.radius * 2.6, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Star Core
+      ctx.beginPath();
+      ctx.arc(renderX, renderY, star.radius * 0.75, 0, Math.PI * 2);
+      ctx.fillStyle = star.color + (currentAlpha > 0.85 ? '1)' : currentAlpha + ')');
+      ctx.fill();
+
+      // 4-point cross diffraction flare on bright stars
+      if (star.isBright && currentAlpha > 0.65) {
+        ctx.strokeStyle = `rgba(255, 255, 255, ${(currentAlpha - 0.65) * 2.0})`;
+        ctx.lineWidth = 0.8;
+        const flareLen = star.radius * 3.8;
+        ctx.beginPath();
+        ctx.moveTo(renderX - flareLen, renderY);
+        ctx.lineTo(renderX + flareLen, renderY);
+        ctx.moveTo(renderX, renderY - flareLen);
+        ctx.lineTo(renderX, renderY + flareLen);
+        ctx.stroke();
+      }
+    }
+
+    // Shooting Stars / Meteors Update & Render
+    const now = Date.now();
+    if (now - lastMeteorTime > nextMeteorDelay) {
+      spawnMeteor();
+      lastMeteorTime = now;
+      nextMeteorDelay = 4500 + Math.random() * 5500;
+    }
+
+    for (let m = shootingStars.length - 1; m >= 0; m--) {
+      const meteor = shootingStars[m];
+      meteor.life++;
+      meteor.x += meteor.dx;
+      meteor.y += meteor.dy;
+
+      const progress = meteor.life / meteor.maxLife;
+      const alpha = progress < 0.2 ? progress / 0.2 : (1 - progress);
+
+      if (progress >= 1 || meteor.x < -100 || meteor.x > width + 100 || meteor.y > height + 100) {
+        shootingStars.splice(m, 1);
+        continue;
+      }
+
+      const tailX = meteor.x - meteor.dx * (meteor.len / meteor.speed);
+      const tailY = meteor.y - meteor.dy * (meteor.len / meteor.speed);
+
+      const mGrad = ctx.createLinearGradient(meteor.x, meteor.y, tailX, tailY);
+      mGrad.addColorStop(0, `rgba(${meteor.color}, ${alpha * 0.95})`);
+      mGrad.addColorStop(0.3, `rgba(255, 255, 255, ${alpha * 0.8})`);
+      mGrad.addColorStop(1, `rgba(${meteor.color}, 0)`);
+
+      ctx.strokeStyle = mGrad;
+      ctx.lineWidth = 1.6;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(meteor.x, meteor.y);
+      ctx.lineTo(tailX, tailY);
+      ctx.stroke();
+
+      // Meteor bright head
+      ctx.beginPath();
+      ctx.arc(meteor.x, meteor.y, 1.8, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+      ctx.fill();
+    }
+
+    animFrameId = requestAnimationFrame(render);
+  }
+
+  // Start 60fps render loop
+  animFrameId = requestAnimationFrame(render);
+
+  // Pause render loop when tab is hidden to save GPU & battery
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      isRunning = false;
+      if (animFrameId) {
+        cancelAnimationFrame(animFrameId);
+        animFrameId = null;
+      }
+    } else {
+      if (!isRunning) {
+        isRunning = true;
+        animFrameId = requestAnimationFrame(render);
+      }
+    }
+  });
+}
+
+// Alias for backwards compatibility & direct calling
+const initGlobalStarfieldCanvas = initSpaceStarsCanvas;
+window.initSpaceStarsCanvas = initSpaceStarsCanvas;
+window.initGlobalStarfieldCanvas = initSpaceStarsCanvas;

@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p class="page-header-tag">Chapter I</p>
         <h2 class="page-chapter-title">About Me</h2>
         <p class="prose-text">
-          Highly motivated and results-driven BCA student specializing in Full-Stack Web Development. Proficient in building dynamic, high-performance, and responsive user interfaces using React.js and modern JavaScript (ES6+).
+          Highly motivated and results-driven BCA student learning Full-Stack Web Development. Proficient in building dynamic, high-performance, and responsive user interfaces using React.js and modern JavaScript (ES6+).
         </p>
         <p class="prose-text">
           Possesses a strong foundation in Database Management (MySQL, MongoDB), computer science fundamentals (DSA, DBMS), and Agile development methodologies. Dedicated to clean code, seamless user experiences, and continuous learning.
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="contact-meta-group">
           <div class="meta-row">
             <span class="meta-label">Email:</span>
-            <span class="meta-val">ayushsinghrawat76456@gmail.com</span>
+            <span class="meta-val">Ayushsinghrawat76456@gmail.com</span>
           </div>
           <div class="meta-row">
             <span class="meta-label">Phone:</span>
@@ -107,9 +107,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <p class="page-header-tag">Connect & Code</p>
         <h2 class="page-chapter-title">Online Presence</h2>
         <div class="online-card-row">
-          <a href="https://linkedin.com/in/ayush-rawat-a126942b2" target="_blank" rel="noopener noreferrer" class="online-item-box">
+          <a href="https://www.linkedin.com/in/ayush-rawat-a126942b2/" target="_blank" rel="noopener noreferrer" class="online-item-box">
             <span class="online-item-title"><i class="fa-brands fa-linkedin" style="color:#0a66c2;"></i> LinkedIn</span>
-            <span class="online-item-url">ayush-rawat-a126942b2 ↗</span>
+            <span class="online-item-url">ayush-rawat-a126942b2/ ↗</span>
           </a>
           <a href="https://github.com/Ayush123-a" target="_blank" rel="noopener noreferrer" class="online-item-box">
             <span class="online-item-title"><i class="fa-brands fa-github"></i> GitHub</span>
@@ -135,28 +135,28 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2 class="page-chapter-title">Core Skills</h2>
         <div class="book-skill-bars">
           <div class="b-skill-item">
-            <div class="b-skill-top"><span class="b-skill-name">JavaScript (ES6+)</span><span class="b-skill-pct">80%</span></div>
-            <div class="b-skill-track"><div class="b-skill-fill" style="width: 80%;"></div></div>
+            <div class="b-skill-top"><span class="b-skill-name">JavaScript (ES6+)</span><span class="b-skill-pct">60%</span></div>
+            <div class="b-skill-track"><div class="b-skill-fill" style="width: 60%;"></div></div>
           </div>
           <div class="b-skill-item">
-            <div class="b-skill-top"><span class="b-skill-name">HTML5 & Modern CSS3</span><span class="b-skill-pct">80%</span></div>
-            <div class="b-skill-track"><div class="b-skill-fill" style="width: 80%;"></div></div>
+            <div class="b-skill-top"><span class="b-skill-name">HTML5 & Modern CSS3</span><span class="b-skill-pct">60%</span></div>
+            <div class="b-skill-track"><div class="b-skill-fill" style="width: 60%;"></div></div>
           </div>
           <div class="b-skill-item">
-            <div class="b-skill-top"><span class="b-skill-name">React.js (Hooks, Context)</span><span class="b-skill-pct">75%</span></div>
-            <div class="b-skill-track"><div class="b-skill-fill" style="width: 75%;"></div></div>
+            <div class="b-skill-top"><span class="b-skill-name">React.js (Hooks, Context)</span><span class="b-skill-pct">60%</span></div>
+            <div class="b-skill-track"><div class="b-skill-fill" style="width: 60%;"></div></div>
           </div>
           <div class="b-skill-item">
-            <div class="b-skill-top"><span class="b-skill-name">Git & GitHub Version Control</span><span class="b-skill-pct">68%</span></div>
-            <div class="b-skill-track"><div class="b-skill-fill" style="width: 68%;"></div></div>
+            <div class="b-skill-top"><span class="b-skill-name">Git & GitHub Version Control</span><span class="b-skill-pct">60%</span></div>
+            <div class="b-skill-track"><div class="b-skill-fill" style="width: 60%;"></div></div>
           </div>
           <div class="b-skill-item">
             <div class="b-skill-top"><span class="b-skill-name">SQL (MySQL & Queries)</span><span class="b-skill-pct">60%</span></div>
             <div class="b-skill-track"><div class="b-skill-fill" style="width: 60%;"></div></div>
           </div>
           <div class="b-skill-item">
-            <div class="b-skill-top"><span class="b-skill-name">Data Structures & Algorithms</span><span class="b-skill-pct">50%</span></div>
-            <div class="b-skill-track"><div class="b-skill-fill" style="width: 50%;"></div></div>
+            <div class="b-skill-top"><span class="b-skill-name">Data Structures & Algorithms</span><span class="b-skill-pct">60%</span></div>
+            <div class="b-skill-track"><div class="b-skill-fill" style="width: 60%;"></div></div>
           </div>
         </div>
         <div class="page-footer-num">— 3 —</div>
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </p>
           <p class="colophon-quote">"Let's write the next chapter together."</p>
           <div style="font-family:var(--font-elegant); font-size:0.95rem; color:var(--book-ink-muted);">
-            <p>ayushsinghrawat76456@gmail.com</p>
+            <p>Ayushsinghrawat76456@gmail.com</p>
             <p style="margin-top:4px;">+91 8088954420</p>
             <p style="margin-top:4px;">Bangalore, Karnataka, India</p>
           </div>

@@ -32,19 +32,19 @@
 
 /* Cyber Obsidian / Neon Pink Theme */
 [data-book-theme="dark"] {
-  --book-bg: #050508;
-  --book-leather: #120e18;
-  --book-spine: #0a060e;
-  --book-gold: #ff2a85;
-  --book-gold-light: #ff7eb3;
-  --book-gold-border: rgba(255, 42, 133, 0.45);
-  --book-page: #100d17;
-  --book-page-aged: #0d0a14;
-  --book-ink: #fce7f3;
-  --book-ink-muted: #a39eb2;
-  --book-primary: #ff0844;
-  --book-border: rgba(255, 42, 133, 0.2);
-  --book-glow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba(255, 42, 133, 0.25);
+  --book-bg: #050914;
+  --book-leather: #0b152d;
+  --book-spine: #070e20;
+  --book-gold: #00d4ff;
+  --book-gold-light: #7dd3fc;
+  --book-gold-border: rgba(0, 212, 255, 0.45);
+  --book-page: #0c1731;
+  --book-page-aged: #081124;
+  --book-ink: #f0f6fc;
+  --book-ink-muted: #8fa2b8;
+  --book-primary: #2565cb;
+  --book-border: rgba(0, 212, 255, 0.2);
+  --book-glow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba(0, 212, 255, 0.25);
 }
 
 /* Emerald Royal Theme */

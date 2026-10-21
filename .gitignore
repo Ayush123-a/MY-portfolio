@@ -1,0 +1,7 @@
+# Dependencies & Embedded repos
+gsd-core/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+*.log
